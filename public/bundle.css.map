@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\src\\components\\Contact.html"
+  ],
+  "sourcesContent": [
+    "<h2>{title}</h2>\n<div class='contact'>\n  {#if !!contactPerson}\n    <h3>Your contact person is <u>{contactPerson}</u></h3>\n  {/if}\n  <label for='clientName'>Name</label>\n  <input id='clientName' type='text' value='{clientName}'/>\n  <label for='clientEmail'>Email</label>\n  <input id='clientEmail' type='email' value='{clientEmail}'/>\n  <label for='clientAge'>Age</label>\n  <input id='clientAge' type='number' value='{clientAge}' />\n  <br/>\n  <textarea id='message'></textarea>\n  <br/>\n  <button name='send' id='send'>Send</button>\n</div>\n\n<script>\n  export default {\n    data() {\n      return {\n        title: 'Contact',\n        clientName: 'John Doe',\n        clientEmail: 'john.doe@test.com',\n        clientAge: 33\n      };\n    }\n  }\n</script>\n\n<style>\n  .contact {\n    padding: 5px 50px;\n  }\n  #message {\n    height: 200px;\n    width: 400px;\n  }\n</style>\n"
+  ],
+  "names": [],
+  "mappings": "AA+BE,QAAQ,cAAC,CAAC,AACR,OAAO,CAAE,GAAG,CAAC,IAAI,AACnB,CAAC,AACD,QAAQ,cAAC,CAAC,AACR,MAAM,CAAE,KAAK,CACb,KAAK,CAAE,KAAK,AACd,CAAC"
+}

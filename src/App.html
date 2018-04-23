@@ -1,0 +1,23 @@
+<div>
+  <a href="/" data-navigo>Home</a>&nbsp;|&nbsp;
+  <a href="/products" data-navigo>Products</a>&nbsp;|&nbsp;
+  <a href="/jobs" data-navigo>Jobs</a>&nbsp;|&nbsp;
+  <a href="/about" data-navigo>About Us</a>
+</div>
+<svelte:component this={Page}/>
+
+<script>
+  import router from './router/router';
+  import Home from './pages/Home.html';
+
+  export default {
+    oncreate() {
+      router.updatePageLinks();
+    },
+    data() {
+      return {
+        Page: Home
+      };
+    }
+  }
+</script>

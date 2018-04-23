@@ -1,0 +1,39 @@
+<h2>{title}</h2>
+<div class='contact'>
+  {#if !!contactPerson}
+    <h3>Your contact person is <u>{contactPerson}</u></h3>
+  {/if}
+  <label for='clientName'>Name</label>
+  <input id='clientName' type='text' value='{clientName}'/>
+  <label for='clientEmail'>Email</label>
+  <input id='clientEmail' type='email' value='{clientEmail}'/>
+  <label for='clientAge'>Age</label>
+  <input id='clientAge' type='number' value='{clientAge}' />
+  <br/>
+  <textarea id='message'></textarea>
+  <br/>
+  <button name='send' id='send'>Send</button>
+</div>
+
+<script>
+  export default {
+    data() {
+      return {
+        title: 'Contact',
+        clientName: 'John Doe',
+        clientEmail: 'john.doe@test.com',
+        clientAge: 33
+      };
+    }
+  }
+</script>
+
+<style>
+  .contact {
+    padding: 5px 50px;
+  }
+  #message {
+    height: 200px;
+    width: 400px;
+  }
+</style>
