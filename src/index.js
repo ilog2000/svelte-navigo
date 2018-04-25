@@ -4,9 +4,17 @@ import Home from './pages/Home.html';
 import Products from './pages/Products.html';
 import Jobs from './pages/Jobs.html';
 import About from './pages/About.html';
+import { Store } from 'svelte/store.js';
+
+const store = new Store({
+  Page: Home
+});
+
+window.store = store; // useful for debugging!
 
 const app = new App({
-  target: document.querySelector('root')
+  target: document.querySelector('root'),
+  store
 });
 
 const logRoute = () => {
@@ -18,28 +26,28 @@ router.on({
       as: 'Products',
       uses: () => {
         logRoute();
-        app.set({ Page: Products });
+        store.set({ Page: Products });
       }
     },
     '/jobs': {
       as: 'Jobs',
       uses: () => {
         logRoute();
-        app.set({ Page: Jobs });
+        store.set({ Page: Jobs });
       }
     },
     '/about': {
       as: 'About',
       uses: () => {
         logRoute();
-        app.set({ Page: About });
+        store.set({ Page: About });
       }
     },
     '/': {
       as: 'Home',
       uses: () => {
         logRoute();
-        app.set({ Page: Home });
+        store.set({ Page: Home });
       }
     }
   })
