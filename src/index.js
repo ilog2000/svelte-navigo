@@ -43,7 +43,7 @@ router.on({
   '/about': () => {
     logRoute();
     store.set({ Page: About });
-    store.set({ id: unnulldefined });
+    store.set({ id: null });
   },
   '/': () => {
     logRoute();
