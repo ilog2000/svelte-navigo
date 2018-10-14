@@ -1,10 +1,11 @@
 <div>
   <a href="/" data-navigo>Home</a>&nbsp;|&nbsp;
   <a href="/products" data-navigo>Products</a>&nbsp;|&nbsp;
+  <a href="/products/42" data-navigo>Product 42</a>&nbsp;|&nbsp;
   <a href="/jobs" data-navigo>Jobs</a>&nbsp;|&nbsp;
   <a href="/about" data-navigo>About Us</a>
 </div>
-<svelte:component this={$Page}/>
+<svelte:component this={$Page} id={$id}/>
 
 <script>
   import router from './router/router';

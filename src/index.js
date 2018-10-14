@@ -24,6 +24,11 @@ const logRoute = () => {
 };
 
 router.on({
+  '/products/:id': (params) => {
+    logRoute();
+    store.set({ Page: Product });
+    store.set({ id: params.id });
+  },
   '/products': () => {
     logRoute();
     store.set({ Page: Products });
@@ -39,5 +44,6 @@ router.on({
   '/': () => {
     logRoute();
     store.set({ Page: Home });
-  }})
+  }
+})
   .resolve();
