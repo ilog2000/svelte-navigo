@@ -7,7 +7,7 @@ This is a simple example of using [Navigo](https://github.com/krasimir/navigo) a
 git clone https://github.com/ilog2000/svelte-navigo
 yarn
 yarn build
-yarn serv
+yarn serve
 ```
 
 Navigate to [localhost:5000](http://localhost:5000) to see the results.
