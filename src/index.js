@@ -21,34 +21,21 @@ const logRoute = () => {
   console.log(JSON.stringify(router.lastRouteResolved(), null, 2));
 };
 
-router.on({
-    '/products': {
-      as: 'Products',
-      uses: () => {
-        logRoute();
-        store.set({ Page: Products });
-      }
-    },
-    '/jobs': {
-      as: 'Jobs',
-      uses: () => {
-        logRoute();
-        store.set({ Page: Jobs });
-      }
-    },
-    '/about': {
-      as: 'About',
-      uses: () => {
-        logRoute();
-        store.set({ Page: About });
-      }
-    },
-    '/': {
-      as: 'Home',
-      uses: () => {
-        logRoute();
-        store.set({ Page: Home });
-      }
-    }
+router.on(
+  '/products', () => {
+    logRoute();
+    store.set({ Page: Products });
+  },
+  '/jobs', () => {
+      logRoute();
+      store.set({ Page: Jobs });
+  },
+  '/about', () => {
+      logRoute();
+      store.set({ Page: About });
+  },
+  '/', () => {
+      logRoute();
+      store.set({ Page: Home });
   })
   .resolve();
