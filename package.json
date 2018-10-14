@@ -10,8 +10,9 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "serv": "sirv public",
     "dev": "rollup -c && sirv public",
-    "start": "sirv public"
+    "start": "start http://localhost:5000 && sirv public"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
